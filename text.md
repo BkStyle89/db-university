@@ -21,7 +21,7 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 - surname (VARCHAR(15) NOTNULL)
 - email (CHAR(30) NOTNULL)
 - phone (CHAR(13) NOTNULL)
-- adress (SMALLINIT NOTNULL)
+- adress (TINYINT NOTNULL)
 - class_choice (VARCHAR(15) NULL)
 - date_of_birth (DATE NOTNULL)
 
@@ -42,39 +42,39 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 ## Table name university
 
 - id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
-- location
+- location (TINYINIT NOTNULL)
 
 ## Table name university Department
 
 - id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
 - type (VARCHAR(15) NOTNULL)
 - location (SMALLINIT NOTNULL)
-- university_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- university_id ( FK BIGINT AI UNIQUE NOTNULL) INDEX
 
 ## Table name course
 
 - id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
 - class (VARCHAR(2) NOTNULL)
-- year (YEAR NOTNULL)
-- department_id
+- year (TINYINT NOTNULL)
+- department_id ( FK BIGINT AI UNIQUE NOTNULL) INDEX
 - start_date (DATE NOTNULL)
 - end_date (DATE NOTNULL)
 
 ## Table name specialization
 
 - id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
-- course_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- course_id ( FK BIGINT AI UNIQUE NOTNULL) INDEX
 - type_of_specialization (VARCHAR(15) NOTNULL)
 
 ## Table name course_specialization
 
 - id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
-- specialization_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
-- course_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- specialization_id ( FK BIGINT AI UNIQUE NOTNULL) INDEX
+- course_id ( FK BIGINT AI UNIQUE NOTNULL) INDEX
 
 ## Table name student_exam
 
-- student_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
-- exam_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- student_id ( FK BIGINT AI UNIQUE NOTNULL) INDEX
+- exam_id ( FK BIGINT AI UNIQUE NOTNULL) INDEX
 - vote (VARCHAR(1) NULL)
 - result (VARCHAR(10) NULL)

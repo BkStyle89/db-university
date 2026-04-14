@@ -16,52 +16,65 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 
 ## Table name Student
 
-- id
-- name
-- surname
-- email
-- phone
-- adress
-- class_choice
-- date_of_birth
+- id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- name (VARCHAR(15) NOTNULL)
+- surname (VARCHAR(15) NOTNULL)
+- email (CHAR(30) NOTNULL)
+- phone (CHAR(13) NOTNULL)
+- adress (SMALLINIT NOTNULL)
+- class_choice (VARCHAR(15) NULL)
+- date_of_birth (DATE NOTNULL)
 
 ## Table name Teacher
 
-- id
-- name
-- surname
-- email
-- phone
+- id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- name (VARCHAR(15) NOTNULL)
+- surname (VARCHAR(15) NOTNULL)
+- email (CHAR(30) NOTNULL)
+- phone  (CHAR(13) NOTNULL)
 
 ## Table name Exam
 
-- id
-- student_id
-- teacher_id
+- id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- sessions (VARCHAR(5) NOTNULL)
+- subjects (VARCHAR(15) NOTNULL)
 
 ## Table name university
 
-- id
+- id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
 - location
 
 ## Table name university Department
 
-- id
-- type
-- location
-- university_id
+- id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- type (VARCHAR(15) NOTNULL)
+- location (SMALLINIT NOTNULL)
+- university_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
 
 ## Table name course
 
-- id
-- class
-- year
+- id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- class (VARCHAR(2) NOTNULL)
+- year (YEAR NOTNULL)
 - department_id
-- start_date
-- end_date
+- start_date (DATE NOTNULL)
+- end_date (DATE NOTNULL)
 
 ## Table name specialization
 
-- id
-- course_id
-- type_of_specialization
+- id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- course_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- type_of_specialization (VARCHAR(15) NOTNULL)
+
+## Table name course_specialization
+
+- id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- specialization_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- course_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+
+## Table name student_exam
+
+- student_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- exam_id ( PK BIGINT AI UNIQUE NOTNULL) INDEX
+- vote (VARCHAR(1) NULL)
+- result (VARCHAR(10) NULL)

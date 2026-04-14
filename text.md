@@ -25,19 +25,34 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 - class_choice
 - date_of_birth
 
+## Table name Teacher
+
+- id
+- name
+- surname
+- course_id
+- email
+- phone
+
+## Table name Exam
+
+- id
+- student_id
+- teacher_id
+
 ## Table name university Department
 
 - id
 - type
 - position
-- student_id
 
 ## Table name course
 
 - id
 - class
 - year
-- student_list
+- department_id
+- student_id
 - start_date
 - end_date
 
@@ -45,5 +60,4 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 
 - id
 - course_id
-- student_list
 - type_of_specialization

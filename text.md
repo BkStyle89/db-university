@@ -78,3 +78,10 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 - exam_id ( FK BIGINT AI UNIQUE NOTNULL) INDEX
 - vote (VARCHAR(1) NULL)
 - result (VARCHAR(10) NULL)
+
+
+## Data Query students from 1990*
+
+select *
+from students
+WHERE YEAR (date_of_birth) = 1990;

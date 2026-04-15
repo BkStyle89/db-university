@@ -99,3 +99,10 @@ select *
 from courses
 WHERE period = 'I semestre'
 	AND year = 1;
+
+## Data query of students age = 30*
+
+select date_of_birth,
+	timestampdiff(YEAR,date_of_birth,curdate()) AS age
+from students
+WHERE timestampdiff(YEAR,date_of_birth,curdate()) = 30;

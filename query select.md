@@ -41,3 +41,8 @@ WHERE date = '2020-06-20'
 select *
 from degrees
 where level = 'magistrale';
+
+## Data query for departments*
+
+select count(*) AS number
+from departments

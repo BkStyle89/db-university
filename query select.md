@@ -46,3 +46,10 @@ where level = 'magistrale';
 
 select count(*) AS number
 from departments
+
+
+## Data query for null phone*
+
+select *
+from teachers
+where phone is null

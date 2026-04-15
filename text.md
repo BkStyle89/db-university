@@ -85,3 +85,10 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 select *
 from students
 WHERE YEAR (date_of_birth) = 1990;
+
+
+## Data Query of CFU bigger than 10*
+
+select *
+from courses
+WHERE cfu >= 10;

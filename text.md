@@ -106,3 +106,11 @@ select date_of_birth,
 	timestampdiff(YEAR,date_of_birth,curdate()) AS age
 from students
 WHERE timestampdiff(YEAR,date_of_birth,curdate()) = 30;
+
+
+## Data query of exams from 20/06/2020 after 14:00pm*
+
+select *
+from exams
+WHERE date = '2020-06-20'
+	AND hour > '14:00:00';

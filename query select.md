@@ -50,6 +50,6 @@ from departments
 
 ## Data query for null phone*
 
-select *
+select count(*) as number
 from teachers
 where phone is null

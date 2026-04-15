@@ -92,3 +92,10 @@ WHERE YEAR (date_of_birth) = 1990;
 select *
 from courses
 WHERE cfu >= 10;
+
+## Data query of  first semester and first year*
+
+select *
+from courses
+WHERE period = 'I semestre'
+	AND year = 1;

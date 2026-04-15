@@ -114,3 +114,10 @@ select *
 from exams
 WHERE date = '2020-06-20'
 	AND hour > '14:00:00';
+
+
+## Data query for Corsi di Laurea Magistrale*
+
+select *
+from degrees
+where level = 'magistrale';

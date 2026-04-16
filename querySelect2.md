@@ -75,3 +75,10 @@ select count(*) as teachers_office,office_address
 from teachers
 group by office_address
 order by teachers_office
+
+## Calcolare la media dei voti di ogni appello d'esame*
+
+select avg(exam_student.vote) as media, date_format(exams.date, "%d/%m/%Y") as Data
+from exam_student
+join exams on exam_student.exam_id = exams.id
+group by exams.id

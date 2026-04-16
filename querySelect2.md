@@ -60,3 +60,11 @@ from students
 join exam_student on students.id= student_id
 join exams on exam_student.exam_id=exams.id
 where exam_student.vote= 18
+
+
+## Contare quanti iscritti ci sono stati ogni anno*
+
+select count(id) as new_students, year(enrolment_date) as year
+from students
+group by year
+order by year

@@ -22,3 +22,12 @@ from teachers
 join course_teacher on teachers.id =course_teacher.teacher_id
 join courses on course_teacher.course_id= courses.id
 where teachers.id = 44
+
+
+## Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti*
+
+select degrees.name as corso_di_laurea, degrees.level, courses.name as course_name, courses.description, courses.period, courses.year, courses.cfu, teachers.id as teacher_id, teachers.name as teacher_name, teachers.surname as teacher_surname
+from degrees
+join courses on degrees.id = courses.id
+join course_teacher on courses.id = teacher_id
+join teachers on course_teacher.teacher_id = teachers.id

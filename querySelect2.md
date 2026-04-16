@@ -68,3 +68,10 @@ select count(id) as new_students, year(enrolment_date) as year
 from students
 group by year
 order by year
+
+## Contare gli insegnanti che hanno l'ufficio nello stesso edificio*
+
+select count(*) as teachers_office,office_address
+from teachers
+group by office_address
+order by teachers_office

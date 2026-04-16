@@ -23,6 +23,14 @@ join course_teacher on teachers.id =course_teacher.teacher_id
 join courses on course_teacher.course_id= courses.id
 where teachers.id = 44
 
+## Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
+
+select students.name, students.surname, degrees.name as degree_name, degrees.level, departments.name as departments_name
+from students
+join degrees on students.degree_id = degrees.id
+join departments on degrees.department_id=departments.id
+order by name asc
+
 
 ## Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti*
 

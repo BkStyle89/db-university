@@ -130,3 +130,12 @@ group by courses.id
 order by media desc
 
 
+## Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome*
+
+select students.name, students.surname
+from students
+join degrees on students.degree_id = degrees.id
+join departments on degrees.department_id=departments.id
+order by name asc
+
+

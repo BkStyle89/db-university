@@ -13,3 +13,12 @@ select degrees.id, degrees.name, degrees.level, departments.id, departments.name
 from degrees
 join `departments` on `degrees`.`department_id` = `departments`.`id`
 where `departments`. `name` = "Dipartimento di Neuroscienze"
+
+
+## Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)*
+
+select teachers.id, teachers.name, teachers.surname, courses.name as courses_name, courses.period, courses.year, courses. cfu
+from teachers
+join course_teacher on teachers.id =course_teacher.teacher_id
+join courses on course_teacher.course_id= courses.id
+where teachers.id = 44

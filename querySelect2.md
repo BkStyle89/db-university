@@ -82,3 +82,10 @@ select avg(exam_student.vote) as media, date_format(exams.date, "%d/%m/%Y") as D
 from exam_student
 join exams on exam_student.exam_id = exams.id
 group by exams.id
+
+## Contare quanti corsi di laurea ci sono per ogni dipartimento*
+
+select count(degrees.department_id) as lauree,departments.name as nome_dipartimento
+from degrees
+join departments on degrees.department_id=departments.id
+group by departments.id

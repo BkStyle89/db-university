@@ -39,3 +39,14 @@ from degrees
 join courses on degrees.id = courses.id
 join course_teacher on courses.id = teacher_id
 join teachers on course_teacher.teacher_id = teachers.id
+
+
+## Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)*
+
+select distinct teachers.id, teachers.name, teachers.surname, departments.name as department_name
+from teachers
+join course_teacher on teachers.id = course_teacher.teacher_id
+join courses on course_teacher.course_id = courses.id
+join degrees on courses.degree_id = degrees.id
+join departments on degrees.department_id = departments.id
+where departments.name = "Dipartimento di Matematica"

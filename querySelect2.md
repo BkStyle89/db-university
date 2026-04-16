@@ -50,3 +50,13 @@ join courses on course_teacher.course_id = courses.id
 join degrees on courses.degree_id = degrees.id
 join departments on degrees.department_id = departments.id
 where departments.name = "Dipartimento di Matematica"
+
+
+## first part of bonus join*
+
+-- BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.
+select *
+from students
+join exam_student on students.id= student_id
+join exams on exam_student.exam_id=exams.id
+where exam_student.vote= 18
